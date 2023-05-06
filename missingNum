@@ -1,0 +1,30 @@
+var missingNumber = function(nums) {
+  let missingNum = 0;
+    nums.sort((a, b) => a - b);
+  	nums.splice(nums.length - 1, 1, nums.length)
+  console.log(nums)
+		for(let i = 0; i < nums.length - 1; i++){
+      let current = nums[i];
+      if(current + 1 === nums[i+1]){
+        continue
+      } else {
+        missingNum = missingNum + (current + 1)
+      }
+    }
+  	return missingNum
+};
+
+
+// var missingNumber = function(nums) {
+//     nums.sort((a,b) => a - b ) 
+//     let count = 0
+//     for(let i = 0; i <= nums.length; i++) {
+//         if(nums[i] == count) {
+//            count++
+//         } else {
+//             return count
+//         }
+//     }
+// };
+
+missingNumber([0,1])

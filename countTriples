@@ -1,0 +1,22 @@
+var countTriples = function(n) {
+  let result = []
+  let numArr = []
+   for(let i = 2; i <= n; i++){
+    numArr.push(i)
+   } 
+  	for(let i = 0; i < numArr.length; i++){
+      let a = numArr[i];
+      for(let j = 0; j < numArr.length; j++){
+        let b = numArr[j]
+      for(let k = 0; k < numArr.length; k++){
+        let c = numArr[k]
+        if(Math.pow(a, 2) + Math.pow(b,2) === Math.pow(c,2)){
+          result.push([a,b,c])
+        }
+      }  
+      }
+    }
+  return result.length
+};
+
+countTriples(10)

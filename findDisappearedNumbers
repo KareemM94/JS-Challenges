@@ -1,0 +1,38 @@
+// var findDisappearedNumbers = function (nums) {
+//   let result = [];
+//   let storeNumber = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!storeNumber[nums[i]]) {
+//       storeNumber[nums[i]] = true;
+//     }
+//   }
+//   for (let i = 1; i <= nums.length; i++) {
+//     if (!storeNumber[i]) {
+//       result.push(i);
+//     }
+//   }
+//   return result;
+// };
+
+// findDisappearedNumbers([1,2,3,4,7,8,9]);
+
+
+
+var findDisappearedNumbers = function(nums) {
+    
+    let count = 1;
+    const result = [];
+    
+    while(count <= nums.length){
+        if(nums.includes(count)){
+            count++;
+        }else{
+            result.push(count);
+            count++;
+        }
+    }
+    
+    return result;
+};
+
+findDisappearedNumbers([1,2,2,1]);

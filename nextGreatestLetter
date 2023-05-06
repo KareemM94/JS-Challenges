@@ -1,0 +1,17 @@
+
+
+var nextGreatestLetter = function(letters, target) {
+    for(let i = 0; i < letters.length; i++){
+      let current = letters[i]
+      if(target.charCodeAt(0) === current.charCodeAt(0)){
+         continue
+      }
+      else if(target.charCodeAt(0) < current.charCodeAt(0)){
+         return current 
+      } 
+      
+    }
+  return letters[0]
+};
+
+nextGreatestLetter(["c","f","j"], "d")

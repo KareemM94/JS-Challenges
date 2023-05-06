@@ -1,0 +1,13 @@
+var repeatedSubstringPattern = function(s) {
+    let newStr = s + s
+   	newStr = newStr.slice(1,-1)
+  	for(let i = 0; i < newStr.length; i++){
+      let current = newStr[i];
+     	if(newStr.includes(s)){
+       return true
+      }	
+       }
+  return false
+};
+
+repeatedSubstringPattern('op-op-')

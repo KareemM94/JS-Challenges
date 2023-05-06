@@ -1,0 +1,47 @@
+const isPrime = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++){
+        if(num % i === 0) return false; 
+    }
+  return num > 1
+}
+
+
+let getPrimeFactors = num => {
+  let numToDivide = num;
+  let dividedBy = 2;
+  let primeFactorArr = [];
+	while(numToDivide >= dividedBy){
+  if(numToDivide % dividedBy === 0 && isPrime(dividedBy) === true){
+    primeFactorArr.push(dividedBy);
+    numToDivide = numToDivide / dividedBy;
+  } else {
+    dividedBy++
+  }
+}
+  return primeFactorArr
+}
+
+
+var isUgly = function(n) {
+  if(n <= 0){
+   return false
+  }
+  if(n === 1){
+      return true
+    }
+    let uglyNumArr = [2, 3, 5];
+  	let primeFactorArr = getPrimeFactors(n);
+  console.log(primeFactorArr)
+  		let allUglyNums = primeFactorArr.every((element, index) => {
+      if (!uglyNumArr.includes(element)) {
+        return false;
+      }
+      return true
+    });
+  return allUglyNums
+}
+
+
+isUgly(-51799)
+
+console.log(Math.pow(-2, 31))

@@ -1,0 +1,17 @@
+var thirdMax = function(nums) {
+    nums.sort(function(a, b) {
+  return b - a;
+});
+  let newArr = [...new Set(nums)]
+
+  if(newArr.length >= 3){
+    return newArr[2]
+  }else {
+    return newArr[0]
+  }
+
+}
+  
+
+
+thirdMax([1,1,2])

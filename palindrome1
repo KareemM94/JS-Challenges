@@ -1,0 +1,13 @@
+var isPalindrome = function(s) {
+    let replaced = s.replace(/[^a-z0-9]/gi, '').toLowerCase();
+  	let reverseReplace = replaced.split("").reverse().join("")
+      console.log(replaced, reverseReplace)
+    if(replaced === reverseReplace){
+      return true
+    } else {
+      return false
+    }
+    
+};
+
+isPalindrome("Ahello")

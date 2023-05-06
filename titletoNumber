@@ -1,0 +1,11 @@
+var titleToNumber = function(columnTitle) {
+    
+    let res = 0
+    for(let c of columnTitle){
+        
+        res = res*26 + c.charCodeAt(0) - 65 + 1
+    }
+    return res
+};
+
+titleToNumber("z")

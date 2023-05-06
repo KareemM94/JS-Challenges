@@ -1,0 +1,18 @@
+var searchInsert = function(nums, target) {
+    for(let i = 0; i <nums.length; i++){
+        let current = nums[i];
+        if(current === target){
+            return i
+        }
+        else{
+            nums.push(target)
+            nums.sort((a, b) => a - b)
+            for(let i = 0; i < nums.length; i++){
+                let newCurrent = nums[i]
+                if(newCurrent === target){
+                    return i
+                }
+            }
+        }
+    }
+};

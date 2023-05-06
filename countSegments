@@ -1,0 +1,10 @@
+var countSegments = function(s) {
+     if(s.trim() === ""){
+        return 0
+    }
+    let num = s.trim().replace(/\s\s+/g, ' ').split(" ");
+  console.log(num)
+    return num.length
+};
+
+countSegments(", , , ,        a, eaefa")

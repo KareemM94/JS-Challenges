@@ -1,0 +1,42 @@
+var fizzBuzz = function(n) {
+    let newArr = [];
+  for(let i = 1; i <= n; i++){
+    let divisibleBy5 = i % 5 === 0;
+    let divisibleBy3 = i % 3 === 0;
+    let toPush;
+    if( divisibleBy5 && divisibleBy3){
+      toPush = 'FizzBuzz'
+    } else if(divisibleBy5){
+      toPush = 'Buzz'
+    } else if(divisibleBy3){
+      toPush = 'Fizz'
+    } else {
+      toPush = i.toString();
+    }
+    newArr.push(toPush);
+  }
+  return newArr
+};
+
+
+
+// var fizzBuzz = function(n) {
+//     let newArr = [];
+//   for(let i = 1; i <= n; i++){
+//     newArr.push(i)
+//   }
+//   for(let i = 0; i < newArr.length; i++){
+//   	let current = newArr[i];
+//     if((current % 5 === 0) && (current % 3 === 0)){
+//       newArr[i] = 'FizzBuzz'
+//     } else if((current % 5 === 0)){
+//       newArr[i] = 'Buzz'
+//     } else if((current % 3 === 0)){
+//       newArr[i] = 'Fizz'
+//     } else {
+//       newArr[i] = current.toString()
+//     }
+//   }
+//   return newArr
+// };
+fizzBuzz(5)

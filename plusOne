@@ -1,0 +1,12 @@
+var plusOne = function(digits) {
+    let strDigits = digits.join("")
+    let numDigits = parseInt(strDigits)
+    let addDigits = numDigits + 1;
+ 		let strStrDigits = addDigits.toString().split('')
+    let arrDigits = strStrDigits.map(Number)
+    
+    return arrDigits
+};
+  
+  
+  plusOne([4,3,2,1])

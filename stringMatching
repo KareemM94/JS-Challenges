@@ -1,0 +1,18 @@
+var stringMatching = function(words) {
+    let newArr = [];
+  for(let i = 0; i < words.length; i++){
+    let currentWord = words[i]
+		for(let j = 0; j < words.length; j++){
+      let otherWords = words[j];
+      if(currentWord === otherWords){
+        continue
+      }
+      if(currentWord.includes(otherWords)){
+        newArr.push(otherWords)
+      }
+    }
+    }
+  return newArr = [...new Set(newArr)]
+};
+
+stringMatching(["leetcoder","leetcode","od","hamlet","am"])

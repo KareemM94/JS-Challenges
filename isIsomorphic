@@ -1,0 +1,26 @@
+
+
+var isIsomorphic = function (s, t) {
+    let obj1 = {}
+    let obj2 = {}
+
+    for (let i = 0; i < s.length; i++) {
+        let currentS = s[i];
+        let currentT = t[i]
+        if ((currentS in obj1) && obj1[currentS] !== t[i] ||
+            (currentT in obj2) && obj2[currentT] !== s[i]
+        ) {
+            return false
+        } 
+        obj1[currentS] = currentT
+        obj2[currentT] = currentS
+    }
+  	console.log('obj1', obj1);
+    console.log('obj2', obj2);
+    return true
+};
+
+
+// isIsomorphic('bbbaaaba', 'aaabbbba')
+isIsomorphic('title', 'paper')
+// isIsomorphic('egg', 'dad')

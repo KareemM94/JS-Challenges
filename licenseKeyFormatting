@@ -1,0 +1,45 @@
+// var licenseKeyFormatting = function (s, k) {
+//   if(s.length === 1){
+//     return s.toUpperCase()
+//   }
+//   s = s.replace(/[^a-z0-9]/gi, '');
+//   let newStr = s.split('');
+//   let remainder = s.length % k;
+//   if (remainder === 0) {
+//     for (let i = 0; i < s.length; i++) {
+//       if (i % k === 0 && i !== 0) {
+//         newStr.splice(i, 0, '-');
+//       }
+//     }
+//     return newStr.join('').toUpperCase();
+//   }
+
+//   let strA = s.substring(0, remainder) + '-';
+//   let strB = s.substring(remainder);
+//   strB = strB.split('');
+
+//   if (remainder !== 0) {
+//     for (let i = 0; i < strB.length-1; i++) {
+//       if (i % k == 0 && i !== 0) {
+//         strB.splice(i, 0, '-');
+//       }
+//     }
+//     strB = strB.join('').toUpperCase();
+//     return strA + strB;
+//   }
+// };
+
+
+var licenseKeyFormatting = function(S, K) {
+
+    const newStr = S.replace(/-/g, '').toUpperCase(), // Remove existing dashes and convert any lowercase letters to uppercase
+             arr = newStr.split(''); // Convert string to an array so we can manipulate it
+
+    for (let i = arr.length - 1 - K; i >= 0; i-= K) { // Loop through array backwards and decrement by value of K
+        arr[i] = arr[i] + '-';
+    }
+
+    return arr.join('');
+};
+
+licenseKeyFormatting("abbbbbbbb", 2);

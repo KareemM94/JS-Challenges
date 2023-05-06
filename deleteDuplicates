@@ -1,0 +1,8 @@
+var deleteDuplicates = function(head) {
+    let newArr = [...new Set(head)];
+  return newArr
+};
+
+
+deleteDuplicates([1,1,2,3,3,5,6,6,7,8,8,9,9])
+

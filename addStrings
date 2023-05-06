@@ -1,0 +1,11 @@
+var addStrings = function(num1, num2) {
+    let intNum1 = parseInt(num1)
+    let intNum2 = parseInt(num2);
+  
+  let result = intNum1 + intNum2
+  return result.toString()
+};
+
+
+addStrings("9333852702227987", "8573173714263")
+

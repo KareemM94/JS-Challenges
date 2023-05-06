@@ -1,0 +1,33 @@
+function getResult(n) {
+  let strN = n.toString().split('')
+    let numArr = []
+    let multiArr = []
+    strN.forEach(str => {
+  numArr.push(Number(str));
+});
+  for(let i = 0; i < numArr.length; i++){
+    let current = numArr[i];
+    multiArr[i] = current * current;
+  }
+  let result = 0;
+ for(let i = 0; i < multiArr.length; i++){
+   result += multiArr[i]
+ }
+  return result;
+}
+
+var isHappy = function(n, chain) {
+  	if (chain === undefined) {
+      chain = [];
+    }
+    let result = getResult(n);
+  	console.log('chain and result', chain, result)
+    if(result === 1){
+      return true
+    } else if (chain.includes(result)) {
+      return false
+    } else {
+      chain.push(result);
+      return isHappy(result, chain)
+    }
+}

@@ -1,0 +1,19 @@
+var numJewelsInStones = function(jewels, stones) {
+  	let numArr = []
+    jewels = jewels.split("");
+  	stones = stones.split("");
+  	for(let i = 0; i < jewels.length; i++){
+      let currentJewel = jewels[i];
+    for(let j = 0; j < stones.length; j++){
+      let currentStone = stones[j];
+      if(currentStone === currentJewel){
+        numArr.push(currentStone)
+        continue
+      }
+    } 	 
+    }
+  return numArr.length
+};
+
+
+numJewelsInStones("z", "ZZ")

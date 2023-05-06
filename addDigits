@@ -1,0 +1,29 @@
+var getResult = function(num) {
+     let strN = num.toString().split('')
+    let numArr = []
+    let multiArr = []
+    strN.forEach(str => {
+  numArr.push(Number(str));
+});
+  for(let i = 0; i < numArr.length; i++){
+    let current = numArr[i];
+    multiArr[i] = current;
+  }
+  let result = 0;
+ for(let i = 0; i < multiArr.length; i++){
+   result += multiArr[i]
+ }
+  return result;
+}
+
+var addDigits = function(num){  
+    let result = getResult(num);
+  if(result.toString().length === 1){
+    return result;
+  } else{
+    return addDigits(result);
+   
+  }
+}
+
+addDigits(199)

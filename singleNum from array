@@ -1,0 +1,20 @@
+var singleNumber = function(nums) {
+  let newArr = []
+    nums.sort((a, b) => a - b);
+ for(let i = 0; i < nums.length; i++){
+   let current = nums[i];
+   if(current === nums[0] && current === nums[i+1]){
+     newArr.push(current)
+   } else if(current === nums[i+1] || current === nums[i-1]){
+     newArr.push(current)
+   } else {
+     return current
+   }
+   
+ }
+  };
+
+
+singleNumber([2,2,1])
+
+singleNumber([4,1,2,1,2])

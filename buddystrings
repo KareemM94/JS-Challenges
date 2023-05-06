@@ -1,0 +1,12 @@
+var buddyStrings = function(s, goal) {
+ s = s.split("");
+  	let first = s[0]
+    let second = s[1]
+    		if(second + first === goal){
+          return true 
+        }
+    return false
+};
+
+buddyStrings("aa", "aa")
+
